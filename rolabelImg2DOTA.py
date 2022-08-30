@@ -122,7 +122,7 @@ def robndbox_to_bndbox_4pts(path, out_path):
 if __name__ == '__main__':
     raw_path = "annotations"
     out_path = "annotations_DOTA_txt"
-    #####下面将rolabeiImg格式(cx,cy,w,h,θ)转化为DOTA数据集的txt格式
+    #####将rolabeiImg格式(cx,cy,w,h,θ)转化为DOTA数据集的txt格式
     ####在rolabelImg的标注格式中,角度angle范围是[0,pi)
     robndbox_to_bndbox_4pts(raw_path,out_path)
     print('down!')
