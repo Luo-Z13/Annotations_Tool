@@ -3,35 +3,7 @@ A personal tool for transforming annotations among rolabelImg and DOTA and so on
 
 Classic style of rolabelImg:
 https://github.com/cgvict/roLabelImg
-
-<annotation verified="no">
-  <folder>JPEGImages</folder>
-  <filename>17</filename>
-  <path>*****</path>
-  <source>
-    <database>Unknown</database>
-  </source>
-  <size>
-    <width>4800</width>
-    <height>2843</height>
-    <depth>3</depth>
-  </size>
-  <segmented>0</segmented>
-  <object>
-    <type>robndbox</type>
-    <name>***</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <robndbox>
-      <cx>2747.5</cx>
-      <cy>588.2051</cy>
-      <w>111.6403</w>
-      <h>1322.4623</h>
-      <angle>0.59</angle>
-    </robndbox>
-  </object>
-</annotation>
+![image](https://user-images.githubusercontent.com/72430633/187375382-3d6e1911-1c41-44e3-a5b3-a7d4bd12ac08.png)
 
 
 Where angle θ:[0,pi/2), which is the angle 
