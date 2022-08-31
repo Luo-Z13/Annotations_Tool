@@ -1,0 +1,74 @@
+import os
+import shutil
+
+CLASS=['single_class']  #class you want to save
+
+def Select_labelTxt(txtpath,new_txtpath,pic_path,new_pic_path):
+    # print(txtpath)
+    Have_bridge=False
+
+    with open(txtpath, 'r') as f_in: 
+        lines = f_in.readlines()
+        splitlines = [x.strip().split(' ') for x in lines]  # split by space
+
+        bridge_num=0
+        del_num=0
+
+        for i, splitline in enumerate(splitlines):
+            if i in [0, 1]:  
+                del lines[i - del_num]  # delete 2 lines
+                del_num += 1  # index-1
+                continue
+
+            class_name = splitline[8] 
+            if class_name not in CLASS:  # just save your class
+                del lines[i-del_num]  
+                del_num+=1 # index-1
+                continue
+            else:
+                bridge_num+=1
+
+        if bridge_num>0:
+            txt_new = open(new_txtpath, 'w')
+            txt_new.writelines(lines)
+            txt_new.close()
+            Have_bridge=True
+
+            #copy imgs
+            if os.path.exists(pic_path):
+                shutil.copyfile(pic_path,new_pic_path)
+
+
+    return Have_bridge
+
+
+if __name__ == '__main__':
+    data_path = 'D:/Dataset/DOTA1.0/images'
+    images_path = os.path.join(data_path, 'Images') 
+    labeltxt_path = os.path.join(data_path, 'labelTxt') 
+
+    new_raw_path='DOTA1.0_transform'
+    new_labeltxt_path = os.path.join(new_raw_path, 'labelTxt_select')  #after select
+    new_images_path=os.path.join(new_raw_path,'Images_select')
+
+    if not os.path.exists(new_labeltxt_path):
+        os.makedirs(new_labeltxt_path)
+    if not os.path.exists(new_images_path):
+        os.makedirs(new_images_path)
+    ext = '.png'  # ext
+    filenames = os.listdir(labeltxt_path)  # get every txt
+    bridgenum=0
+    for filename in filenames:
+        filepath = labeltxt_path + '/' + filename 
+        new_filepath = new_labeltxt_path+'/'+filename
+
+        picname = os.path.splitext(filename)[0] + ext
+        pic_path = os.path.join(images_path, picname)  
+        new_pic_path=os.path.join(new_images_path,picname)
+        if_have_bridge = Select_labelTxt(filepath,new_filepath,pic_path,new_pic_path)  # select
+        if if_have_bridge:
+            bridgenum+=1
+
+
+        print('Processing%s' % filename)
+    print('Total txts:',bridgenum)
