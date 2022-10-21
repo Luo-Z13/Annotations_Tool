@@ -1,6 +1,8 @@
 # Annotations_Tool
 A personal tool for transforming annotations among rolabelImg and DOTA and so on
 
+### New(2022.10.21) : Add `DOTA_devkit` contains DOTA2COCO(object detection) style~
+
 Classic style of rolabelImg:
 https://github.com/cgvict/roLabelImg
 ## sososo useful :smile: ——THC
