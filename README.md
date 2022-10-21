@@ -4,7 +4,7 @@ A personal tool for transforming annotations among rolabelImg and DOTA and so on
 Classic style of rolabelImg:
 https://github.com/cgvict/roLabelImg
 ## sososo useful :smile:
-
+## author so handsome :watermelon:
 ![image](https://user-images.githubusercontent.com/72430633/187375382-3d6e1911-1c41-44e3-a5b3-a7d4bd12ac08.png)
 
 
