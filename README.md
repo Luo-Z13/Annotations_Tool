@@ -1,5 +1,9 @@
 # Annotations_Tool
-A personal tool for transforming annotations among rolabelImg and DOTA and so on...
+A personal tool for transforming annotations among rolabelImg、COCO and DOTA and so on...
+
+### New(2023.4.10) : Add `RLIS2DOTA`、`CSV2COCO` and `VOC2COCO` style.
+RLIS格式: 详细介绍见 https://zhuanlan.zhihu.com/p/275720038,https://github.com/msnh2012/CasiaLabeler, 标注工具软件名称为CasiaLabeler。
+CasiaLabeler是一款非常轻量的标注软件，支持win10、ubuntu18和mac10.13+平台。主要适用于目标检测和实例分割等场景。可用于Faster RCNN, Mask RCNN, Yolo系列, SSD系列, Centernet系列等。
 
 ### New(2022.10.21) : Add `DOTA_devkit` contains DOTA2COCO(object detection) style~
 
